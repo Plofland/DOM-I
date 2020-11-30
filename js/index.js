@@ -41,5 +41,30 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-let navLink = document.getElementsByName("header");
-navLink.textContent = "Link";
+
+// *Set the new nav links
+let count = 1;
+let navLink = document.querySelectorAll("nav a");
+// let realNavLink = Array.from(navLink); look this up later
+navLink.forEach(item => {
+  item.textContent = siteContent.nav[`nav-item-${count}`];
+   count++; 
+  });
+// navLink.forEach((item, index) => item.textContent = siteContent.nav[`nav-item-${index}`]); Matthew's Brilliant forEach solution
+
+
+
+// *Set the new logo image
+let newLogoImg = document.getElementById("logo-img");
+newLogoImg.setAttribute("src", siteContent.nav["img-src"]);
+
+// *cta Section: 
+// Set cta-text h1, set button text, set image src
+let ctaSection = document.getElementsByClassName("cta");
+document.querySelector("h1").innerHTML = "DOM<br> Is<br> Awesome";
+document.querySelector("button").innerHTML = "Get Started";
+ctaSection.setAttribute("src", siteContent.cta["img-src"]);
+
+
+// *Main Content Section
+// set both of the h4's and p's, set src,
