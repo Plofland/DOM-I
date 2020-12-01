@@ -66,8 +66,11 @@ newLink2.href = "#";
 document.querySelector("nav").prepend(newLink2);
 
 // Set Nav text color
-// let navLinks = document.querySelectorAll("header nav a");
-// navLinks.style.fontSize = "5rem";
+const allLinks = document.querySelectorAll("a");
+const allLinksArray = Array.from(allLinks);
+for(i in allLinksArray){
+  allLinksArray[i].style.color = "green"
+}
 
 
 // Logo Image:--------------------------------------------------------
