@@ -82,7 +82,6 @@ ctaImage.setAttribute("src", siteContent.cta["img-src"]);
 // Set all of the h4's
 const allH4 = document.querySelectorAll(".text-content h4");
 const allH4Array = Array.from(allH4);
-console.log(allH4Array);
 // Top Content
 allH4[0].innerHTML = siteContent["main-content"]["features-h4"];
 allH4[1].innerHTML = siteContent["main-content"]["about-h4"];
@@ -111,6 +110,11 @@ midImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
 const contactH4 = document.querySelector(".contact h4");
 contactH4.innerHTML = siteContent["contact"]["contact-h4"];
 // Set all of the p's
+const contactP = document.querySelectorAll(".contact p");
+contactPArray = Array.from(contactP);
+contactPArray[0].innerHTML = siteContent["contact"]["address"];
+contactPArray[1].innerHTML = siteContent["contact"]["phone"];
+contactPArray[2].innerHTML = siteContent["contact"]["email"];
 
 // Footer Section -----------------------------------------------------------
 // Set the p
