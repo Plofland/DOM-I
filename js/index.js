@@ -42,29 +42,34 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent.nav["img-src"])
 
 
-// *Set the new nav links
+// Nav Bar---------------------------------------------------------
+// Set Nav Links
 let count = 1;
 let navLink = document.querySelectorAll("nav a");
-// let realNavLink = Array.from(navLink); look this up later
 navLink.forEach(item => {
   item.textContent = siteContent.nav[`nav-item-${count}`];
    count++; 
 });
 
 // Matthew's Brilliant forEach solution
-// navLink.forEach((item, index) => item.textContent = siteContent.nav[`nav-item-${index}`]); 
+// navLink.forEach((item, index) => item.textContent = siteContent.nav[`nav-item-${index + 1}`]); 
+
+// Set Nav text color
 
 
 
-// *Set the new logo image
+// Logo Image:-----------------------------------------------------
+// Set the new logo image
 let newLogoImg = document.getElementById("logo-img");
 newLogoImg.setAttribute("src", siteContent.nav["img-src"]);
 
-// *cta Section: 
-// Set cta-text h1, set button text, set image src
+// cta Section: ---------------------------------------------------
 let ctaSection = document.getElementsByClassName("cta");
+// Set cta-text h1
 document.querySelector("h1").innerHTML = "DOM<br> Is<br> Awesome";
+// Set button text
 document.querySelector("button").innerHTML = "Get Started";
+// Set image src
 let ctaImage = document.getElementById("cta-img");
 ctaImage.setAttribute("src", siteContent.cta["img-src"]);
 
@@ -73,12 +78,39 @@ ctaImage.setAttribute("src", siteContent.cta["img-src"]);
 // hOne.innerHTML = siteContent['cta']['h1'].split(' ').join('<br>');
 
 
-// *Main Content Section
-// set both of the h4's and p's, set src,
+// *Main Content Section--------------------------------------------
+// Set all of the h4's
+const allH4 = document.querySelectorAll(".text-content h4");
+const allH4Array = Array.from(allH4);
+console.log(allH4Array);
+// Top Content
+allH4[0].innerHTML = siteContent["main-content"]["features-h4"];
+allH4[1].innerHTML = siteContent["main-content"]["about-h4"];
+// Bottom Content
+allH4[2].innerHTML = siteContent["main-content"]["services-h4"];
+allH4[3].innerHTML = siteContent["main-content"]["product-h4"];
+allH4[4].innerHTML = siteContent["main-content"]["vision-h4"];
 
-document.querySelector(".text-content h4").innerHTML = siteContent.main-content["features-h4"];
+// Set all of the p's
+const allP = document.querySelectorAll(".text-content p");
+const allPArray = Array.from(allP);
+// Top Content
+allPArray[0].innerHTML = siteContent["main-content"]["features-content"];
+allPArray[1].innerHTML = siteContent["main-content"]["about-content"];
+// Bottom Content
+allPArray[2].innerHTML = siteContent["main-content"]["services-content"];
+allPArray[3].innerHTML = siteContent["main-content"]["product-content"];
+allPArray[4].innerHTML = siteContent["main-content"]["vision-content"];
 
+// Set Middle Image src
+const midImg = document.getElementById("middle-img");
+midImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
 
+// Contact Section ----------------------------------------------------------
+// Set the h4
+const contactH4 = document.querySelector(".contact h4");
+contactH4.innerHTML = siteContent["contact"]["contact-h4"];
+// Set all of the p's
 
-midImg.setAttribute("src", siteContent.["main-content"]["middle-img-src"]);
-let midImg = document.getElementsByClassName("middle-img");
+// Footer Section -----------------------------------------------------------
+// Set the p
