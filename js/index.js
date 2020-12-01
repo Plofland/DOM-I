@@ -42,43 +42,53 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent.nav["img-src"])
 
 
-// Nav Bar---------------------------------------------------------
+// Nav Bar-----------------------------------------------------------
 // Set Nav Links
 let count = 1;
-let navLink = document.querySelectorAll("nav a");
+const navLink = document.querySelectorAll("header nav a");
 navLink.forEach(item => {
   item.textContent = siteContent.nav[`nav-item-${count}`];
    count++; 
 });
 
-// Matthew's Brilliant forEach solution
+// Matthew Justice's Brilliant forEach solution
 // navLink.forEach((item, index) => item.textContent = siteContent.nav[`nav-item-${index + 1}`]); 
 
+// Create two items for the Navigation Menu
+const newLink = document.createElement("a");
+newLink.textContent = "Blog";
+newLink.href = "#";
+document.querySelector("nav").appendChild(newLink)
+
+const newLink2 = document.createElement("a");
+newLink2.textContent = "DOM-a-Llama";
+newLink2.href = "#";
+document.querySelector("nav").prepend(newLink2);
+
 // Set Nav text color
+// let navLinks = document.querySelectorAll("header nav a");
+// navLinks.style.fontSize = "5rem";
 
 
-
-// Logo Image:-----------------------------------------------------
+// Logo Image:--------------------------------------------------------
 // Set the new logo image
-let newLogoImg = document.getElementById("logo-img");
+const newLogoImg = document.getElementById("logo-img");
 newLogoImg.setAttribute("src", siteContent.nav["img-src"]);
 
-// cta Section: ---------------------------------------------------
-let ctaSection = document.getElementsByClassName("cta");
+// cta Section: ------------------------------------------------------
+const ctaSection = document.getElementsByClassName("cta");
 // Set cta-text h1
-document.querySelector("h1").innerHTML = "DOM<br> Is<br> Awesome";
+ctaH1 = document.querySelector("h1");
+ctaH1.innerHTML = siteContent.cta.h1.split(" ").join("<br>");
 // Set button text
-document.querySelector("button").innerHTML = "Get Started";
+document.querySelector("button").innerHTML = siteContent.cta.button;
 // Set image src
-let ctaImage = document.getElementById("cta-img");
+const ctaImage = document.getElementById("cta-img");
 ctaImage.setAttribute("src", siteContent.cta["img-src"]);
 
 
-// Matthew's solution for avoiding hard coding "Dom Is Awesome"
-// hOne.innerHTML = siteContent['cta']['h1'].split(' ').join('<br>');
 
-
-// *Main Content Section--------------------------------------------
+// *Main Content Section-----------------------------------------------
 // Set all of the h4's
 const allH4 = document.querySelectorAll(".text-content h4");
 const allH4Array = Array.from(allH4);
@@ -118,3 +128,5 @@ contactPArray[2].innerHTML = siteContent["contact"]["email"];
 
 // Footer Section -----------------------------------------------------------
 // Set the p
+const footerP = document.querySelector("footer p");
+footerP.innerHTML = siteContent["footer"]["copyright"]
