@@ -39,7 +39,7 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent.nav["img-src"])
 
 
 // *Set the new nav links
@@ -49,8 +49,10 @@ let navLink = document.querySelectorAll("nav a");
 navLink.forEach(item => {
   item.textContent = siteContent.nav[`nav-item-${count}`];
    count++; 
-  });
-// navLink.forEach((item, index) => item.textContent = siteContent.nav[`nav-item-${index}`]); Matthew's Brilliant forEach solution
+});
+
+// Matthew's Brilliant forEach solution
+// navLink.forEach((item, index) => item.textContent = siteContent.nav[`nav-item-${index}`]); 
 
 
 
@@ -63,8 +65,20 @@ newLogoImg.setAttribute("src", siteContent.nav["img-src"]);
 let ctaSection = document.getElementsByClassName("cta");
 document.querySelector("h1").innerHTML = "DOM<br> Is<br> Awesome";
 document.querySelector("button").innerHTML = "Get Started";
-ctaSection.setAttribute("src", siteContent.cta["img-src"]);
+let ctaImage = document.getElementById("cta-img");
+ctaImage.setAttribute("src", siteContent.cta["img-src"]);
+
+
+// Matthew's solution for avoiding hard coding "Dom Is Awesome"
+// hOne.innerHTML = siteContent['cta']['h1'].split(' ').join('<br>');
 
 
 // *Main Content Section
 // set both of the h4's and p's, set src,
+
+document.querySelector(".text-content h4").innerHTML = siteContent.main-content["features-h4"];
+
+
+
+midImg.setAttribute("src", siteContent.["main-content"]["middle-img-src"]);
+let midImg = document.getElementsByClassName("middle-img");
